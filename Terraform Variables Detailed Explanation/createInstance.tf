@@ -7,4 +7,5 @@ resource "aws_instance" "MyFirstInstnace" {
     Name = "demoinstnce"
   }
 
+security_groups = "${var.Security_Group}"
 }
