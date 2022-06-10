@@ -6,30 +6,28 @@ variable "AWS_ACCESS_KEY" {
 variable "AWS_SECRET_KEY" {}
 
 variable "AWS_REGION" {
-default = "us-east-2"
+default = "eu-west-1"
 }
 
 variable "Security_Group"{
-    type = list
-    default = ["sg-24076", "sg-90890", "sg-456789"]
+    default = ["sg-067ed0b523ff8c917", "sg-0ce8a6d06143e251b", "sg-0064055deeb03cb44"]
 }
 
 variable "AMIS" {
-    type = map
     default = {
-        us-east-1 = "ami-0f40c8f97004632f9"
-        us-east-2 = "ami-05692172625678b4e"
-        us-west-2 = "ami-0352d5a37fb4f603f"
-        us-west-1 = "ami-0f40c8f97004632f9"
+        eu-west-2 = "ami-030770b178fa9d374"
+        eu-east-1 = "ami-0d71ea30463e0ff8d"
+        eu-west-1 = "ami-0f0f1c02e5e4d9d9f"
+        eu-west-2 = "ami-078a289ddf4b09ae0"
     }
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "levelup_key"
+  default = "terra_rz_key"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "levelup_key.pub"
+  default = "terra_rz_key.pub"
 }
 
 variable "INSTANCE_USERNAME" {
