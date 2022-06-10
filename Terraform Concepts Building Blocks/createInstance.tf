@@ -8,7 +8,7 @@ resource "aws_instance" "MyFirstInstnace" {
   ami           = lookup(var.AMIS, var.AWS_REGION)
   instance_type = "t2.micro"
   key_name      = aws_key_pair.terra_rz_key.key_name
-  vpc_security_group_ids = ["${aws_security_group.webSG.id}"]
+  vpc_security_group_ids = ["${aws_security_group.nginxSG.id}"]
   tags = {
     Name = "custom_instance"
   }
@@ -34,8 +34,8 @@ resource "aws_instance" "MyFirstInstnace" {
   }
 }
 
-resource "aws_security_group" "webSG" {
-  name        = "webSG"
+resource "aws_security_group" "nginxSG" {
+  name        = "nginxSG"
   description = "Allow ssh  inbound traffic"
 
   ingress {
@@ -50,6 +50,13 @@ resource "aws_security_group" "webSG" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["178.62.11.97/32"]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["86.20.234.226/32"]
   }
 
   egress {
