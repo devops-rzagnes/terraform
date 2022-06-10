@@ -10,14 +10,14 @@ default = "eu-west-1"
 }
 
 variable "Security_Group"{
-    default = ["sg-067ed0b523ff8c917", "sg-0ce8a6d06143e251b", "sg-0064055deeb03cb44"]
+    default = ["sg-24077", "sg-90989", "sg-456234"]
 }
 
 variable "AMIS" {
     default = {
         eu-west-2 = "ami-030770b178fa9d374"
         eu-east-1 = "ami-0d71ea30463e0ff8d"
-        eu-west-1 = "ami-0f0f1c02e5e4d9d9f"
+        eu-west-1 = "ami-0bba0a4cb75835f71"
         eu-west-2 = "ami-078a289ddf4b09ae0"
     }
 }
