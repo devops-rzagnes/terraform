@@ -1,6 +1,5 @@
 #Security Group for terraform
 resource "aws_security_group" "allow-terraform-ssh" {
-  vpc_id      = aws_vpc.terraform-vpc-test.id
   name        = "allow-terraform-ssh"
   description = "security group that allows ssh connection"
 
@@ -24,9 +23,8 @@ resource "aws_security_group" "allow-terraform-ssh" {
     protocol    = "tcp"
     cidr_blocks = ["86.20.234.226/32"]
   }
-  
+
   tags = {
     Name = "allow-terraform-ssh"
   }
 }
-
