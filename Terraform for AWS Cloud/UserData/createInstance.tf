@@ -40,8 +40,8 @@ resource "aws_ebs_volume" "ebs-volume-1" {
 #Atatch Second EBS volume with AWS Instance
 resource "aws_volume_attachment" "ebs-volume-1-attachment" {
   device_name = "/dev/xvdh"
-  volume_id   = aws_ebs_volume.ebs-volume-1[count.index].id
-  instance_id = aws_instance.MyFirstInstnace[count.index].id
+  volume_id   = aws_ebs_volume.ebs-volume-1[count.index]
+  instance_id = aws_instance.MyFirstInstnace[count.index]
   stop_instance_before_detaching = true
 }
 
