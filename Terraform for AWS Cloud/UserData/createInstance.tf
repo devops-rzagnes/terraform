@@ -40,15 +40,15 @@ resource "aws_ebs_volume" "ebs-volume-1" {
 #Atatch Second EBS volume with AWS Instance
 resource "aws_volume_attachment" "ebs-volume-1-attachment" {
   device_name = "/dev/xvdh"
-  volume_id   = aws_ebs_volume.ebs-volume-1[count.index]
-  instance_id = aws_instance.MyFirstInstnace[count.index]
+  volume_id   = aws_ebs_volume.ebs-volume-1[0].id
+  instance_id = aws_instance.MyFirstInstnace[0].id
   stop_instance_before_detaching = true
 }
 
 output "public_ip" {
-  value = aws_instance.MyFirstInstnace[count.index].public_ip
+  value = aws_instance.MyFirstInstnace[0].public_ip
 }
 
 output "private_ip" {
-  value = aws_instance.MyFirstInstnace[count.index].private_ip
+  value = aws_instance.MyFirstInstnace[0].private_ip
 }
