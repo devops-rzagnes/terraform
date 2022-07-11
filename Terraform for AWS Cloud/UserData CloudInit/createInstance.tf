@@ -33,7 +33,7 @@ resource "aws_ebs_volume" "ebs-volume-1" {
   type              = "gp2"
 
   tags = {
-    Name = "Secondary_Volume_Disk_${count.index}"
+    Name = "Secondary_Volume_Disk_"
   }
 }
 
