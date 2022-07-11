@@ -22,7 +22,7 @@ resource "aws_instance" "MyFirstInstnace" {
 
 
   tags = {
-    Name = "terraform_instance ${count.index}"
+    Name = "terraform_instance_${count.index}"
   }
 }
 
@@ -33,7 +33,7 @@ resource "aws_ebs_volume" "ebs-volume-1" {
   type              = "gp2"
 
   tags = {
-    Name = "Secondary Volume Disk"
+    Name = "Secondary_Volume_Disk_${count.index}"
   }
 }
 
