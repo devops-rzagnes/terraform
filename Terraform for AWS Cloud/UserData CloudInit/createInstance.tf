@@ -10,7 +10,7 @@ resource "aws_instance" "MyFirstInstnace" {
   instance_type = "t2.micro"
   availability_zone = "eu-west-1a"
   key_name      = aws_key_pair.terraform_key.key_name
-  vpc_security_group_ids = ["${aws_security_group.allow-terraform-ssh.id}"]
+  vpc_security_group_ids = [aws_security_group.allow-terraform-ssh.id]
   user_data = data.template_cloudinit_config.install-apache-config.rendered
 
   connection {
