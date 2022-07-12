@@ -27,5 +27,5 @@ resource "aws_iam_group_membership" "admin-users" {
 resource "aws_iam_policy_attachment" "admin-users-attach" {
   name       = "admin-users-attach"
   groups     = [aws_iam_group.admingroup.name]
-  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonDocDBReadOnlyAccess"
 }
