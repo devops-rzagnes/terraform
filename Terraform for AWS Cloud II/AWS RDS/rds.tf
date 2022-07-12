@@ -37,7 +37,7 @@ resource "aws_db_instance" "terraform-mariadb" {
   skip_final_snapshot     = true                                        # skip final snapshot when doing terraform destroy
   
   tags = {
-    Name = "levelup-mariadb"
+    Name = "terraform_mariadb"
   }
 }
 
