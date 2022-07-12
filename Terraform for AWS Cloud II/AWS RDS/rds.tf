@@ -32,7 +32,7 @@ resource "aws_db_instance" "terraform-mariadb" {
   multi_az                = "false"            # set to true to have high availability: 2 instances synchronized with each other
   vpc_security_group_ids  = [aws_security_group.allow-mariadb.id]
   storage_type            = "gp2"
-  backup_retention_period = 30                                          # how long you’re going to keep your backups
+  backup_retention_period = 7                                          # how long you’re going to keep your backups
   availability_zone       = aws_subnet.terraform-vpc-test-private-1.availability_zone # prefered AZ
   skip_final_snapshot     = true                                        # skip final snapshot when doing terraform destroy
   
