@@ -8,7 +8,7 @@ resource "aws_db_subnet_group" "mariadb-subnets" {
 #RDS Parameters
 resource "aws_db_parameter_group" "terraform-mariadb-parameters" {
   name        = "terraform-mariadb-parameters"
-  family      = "mariadb10.4"
+  family      = "mariadb10.6"
   description = "MariaDB parameter group"
 
   parameter {
@@ -21,7 +21,7 @@ resource "aws_db_parameter_group" "terraform-mariadb-parameters" {
 resource "aws_db_instance" "terraform-mariadb" {
   allocated_storage       = 20             # 20 GB of storage
   engine                  = "mariadb"
-  engine_version          = "10.4.8"
+  engine_version          = "10.6.7"
   instance_class          = "db.t2.micro"  # use micro if you want to use the free tier
   identifier              = "mariadb"
   name                    = "mariadb"
