@@ -1,6 +1,7 @@
-#Security Group for levelupvpc
+
 #Security Group for terraform
 resource "aws_security_group" "allow-terraform-ssh" {
+  vpc_id      = aws_vpc.terraform-vpc-test.id
   name        = "allow-terraform-ssh"
   description = "security group that allows ssh connection"
 
