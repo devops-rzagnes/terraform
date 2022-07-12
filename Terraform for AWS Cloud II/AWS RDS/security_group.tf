@@ -1,7 +1,7 @@
 #Security Group for levelupvpc
-resource "aws_security_group" "allow-levelup-ssh" {
-  vpc_id      = aws_vpc.levelupvpc.id
-  name        = "allow-levelup-ssh"
+#Security Group for terraform
+resource "aws_security_group" "allow-terraform-ssh" {
+  name        = "allow-terraform-ssh"
   description = "security group that allows ssh connection"
 
   egress {
@@ -15,17 +15,24 @@ resource "aws_security_group" "allow-levelup-ssh" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["178.62.11.97/32", "86.20.234.226/32"]
   }
-  
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["178.62.11.97/32", "86.20.234.226/32"]
+  }
+
   tags = {
-    Name = "allow-levelup-ssh"
+    Name = "allow-terraform-ssh"
   }
 }
 
 #Security Group for MariaDB
 resource "aws_security_group" "allow-mariadb" {
-  vpc_id      = aws_vpc.levelupvpc.id
+  vpc_id      = aws_vpc.terraform-vpc-test.id
   name        = "allow-mariadb"
   description = "security group for Maria DB"
 
@@ -40,7 +47,7 @@ resource "aws_security_group" "allow-mariadb" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    security_groups = [aws_security_group.allow-levelup-ssh.id]
+    security_groups = [aws_security_group.allow-terraform-ssh.id]
   }
   
   tags = {
