@@ -10,7 +10,7 @@ resource "aws_instance" "MyFirstInstnace" {
   instance_type = "t2.micro"
   availability_zone = "eu-west-1a"
   key_name      = aws_key_pair.terraform_key.key_name
-  vpc_security_group_ids = ["${aws_security_group.allow-terraform-ssh.id}"]
+  vpc_security_group_ids = [aws_security_group.allow-terraform-ssh.id]
   subnet_id = aws_subnet.terraform-vpc-test-public-1.id
 
   connection {
