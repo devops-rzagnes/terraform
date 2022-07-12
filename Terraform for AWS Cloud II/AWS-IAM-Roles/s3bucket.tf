@@ -6,6 +6,6 @@ resource "aws_s3_bucket" "terraform-s3bucket" {
 
   tags = {
     Name = "terraform-bucket-141"
+    Environment = "Development"
   }
 }
-
