@@ -43,7 +43,7 @@ EOF
 
 }
 
-#Instance identifier
+#Instance identifier used to attach the policy to the EC2 instance we create
 resource "aws_iam_instance_profile" "s3-terraform-bucket-role-instanceprofile" {
   name = "s3-terraform-bucket-role"
   role = aws_iam_role.s3-terraform-bucket-role.name
