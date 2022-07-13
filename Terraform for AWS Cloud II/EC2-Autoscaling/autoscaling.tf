@@ -6,7 +6,7 @@ resource "aws_launch_configuration" "terraform-launchconfig" {
   key_name        = aws_key_pair.terraform_key.key_name
   associate_public_ip_address = true
 #  vpc_security_group_ids = [aws_security_group.allow-terraform-ssh.id]
-  security_groups = [var.SubnetID, aws_security_group.allow-terraform-ssh]
+  security_groups = [aws_security_group.allow-terraform-ssh]
 
 }
 
