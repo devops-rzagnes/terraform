@@ -15,7 +15,7 @@ resource "aws_security_group" "terraform-elb-securitygroup" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0", "86.20.234.226/32"]
+    cidr_blocks = ["178.62.11.97/32", "86.20.234.226/32"]
   }
 
   tags = {
@@ -40,7 +40,7 @@ resource "aws_security_group" "terraform-instance" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0", "86.20.234.226/32"]
+    cidr_blocks = ["178.62.11.97/32", "86.20.234.226/32"]
   }
 
   ingress {
