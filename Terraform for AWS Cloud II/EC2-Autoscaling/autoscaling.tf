@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "terraform-launchconfig" {
   image_id        = lookup(var.AMIS, var.AWS_REGION)
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.terraform_key.key_name
-  vpc_security_group_ids = [aws_security_group.allow-terraform-ssh.id]
+#  vpc_security_group_ids = [aws_security_group.allow-terraform-ssh.id]
 
 }
 
