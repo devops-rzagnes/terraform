@@ -17,7 +17,7 @@ resource "aws_key_pair" "terraform_key" {
 #Autoscaling Group
 resource "aws_autoscaling_group" "terraform-autoscaling" {
   name                      = "terraform-autoscaling"
-  vpc_zone_identifier       = ["eu-west-1a", "eu-west-1b"]
+  vpc_zone_identifier       = ["subnet-088dad867af90fd1e", "subnet-0df6666ad64d5baf6"]
   launch_configuration      = aws_launch_configuration.terraform-launchconfig.name
   min_size                  = 1
   max_size                  = 2
