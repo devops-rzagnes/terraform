@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "terraform-launchconfig" {
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.terraform_key.key_name
   security_groups = [aws_security_group.terraform-instance.id]
-  user_data       = "#!/bin/bash\nyum -y update\nyum -y install httpd\nsystemctl start httpd\nsystemctl enable httpd\nMYIP=`ifconfig | grep -E '(inet 10)|(addr:10)' | awk '{ print $2 }' | cut -d ':' -f2`\necho 'Hello Team\nThis is my IP: '$MYIP  and $(hostname -f) at $(date +'%Y-%m-%d %H:%M:%S')> /var/www/html/index.html"
+  user_data       = "#!/bin/bash\nyum -y update\nyum -y install httpd\nsystemctl start httpd\nsystemctl enable httpd\nMYIP=`ifconfig | grep -E '(inet 10)|(addr:10)' | awk '{ print $2 }' | cut -d ':' -f2`\necho 'Hello Team\nThis is my IP: '$MYIP  and my hostname is $(hostname -f) at $(date +'%Y-%m-%d %H:%M:%S')> /var/www/html/index.html"
 
   lifecycle {
     create_before_destroy = true
