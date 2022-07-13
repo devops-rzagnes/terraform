@@ -3,7 +3,7 @@ resource "aws_elb" "terraform-elb" {
   name            = "terraform-elb"
   subnets         = [aws_subnet.terraform-vpc-test-public-1.id, aws_subnet.terraform-vpc-test-private-2.id]
   security_groups = [aws_security_group.terraform-elb-securitygroup.id]  # added ssh group for test purposes
-  
+
   listener {
     instance_port     = 80
     instance_protocol = "http"
