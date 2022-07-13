@@ -1,10 +1,10 @@
 module "ec2_cluster" {
     source = "github.com/terraform-aws-modules/terraform-aws-ec2-instance.git"
 
-    name    = "my-cluster"
-    ami     = "ami-0f40c8f97004632f9"
+    name    = "my-terraform-cluster"
+    ami     = "ami-0d71ea30463e0ff8d"
     instance_type          = "t2.micro"
-    subnet_id   = "subnet-e92f9cc8"
+    subnet_id   = "subnet-088dad867af90fd1e"
 
     tags = {
     Terraform   = "true"
