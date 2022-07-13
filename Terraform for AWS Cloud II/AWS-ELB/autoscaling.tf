@@ -32,7 +32,7 @@ resource "aws_autoscaling_group" "levelup-autoscaling" {
 
   tag {
     key                 = "Name"
-    value               = "LevelUp Custom EC2 instance via LB"
+    value               = "Terraform Custom EC2 instance via LB"
     propagate_at_launch = true
   }
 }
