@@ -4,7 +4,9 @@ resource "aws_launch_configuration" "terraform-launchconfig" {
   image_id        = lookup(var.AMIS, var.AWS_REGION)
   instance_type   = "t2.micro"
   key_name        = aws_key_pair.terraform_key.key_name
+  associate_public_ip_address = true
 #  vpc_security_group_ids = [aws_security_group.allow-terraform-ssh.id]
+  security_groups = [var.SubnetID, aws_security_group.allow-terraform-ssh]
 
 }
 
@@ -17,7 +19,8 @@ resource "aws_key_pair" "terraform_key" {
 #Autoscaling Group
 resource "aws_autoscaling_group" "terraform-autoscaling" {
   name                      = "terraform-autoscaling"
-  vpc_zone_identifier       = ["subnet-088dad867af90fd1e", "subnet-0df6666ad64d5baf6"]
+#  vpc_zone_identifier       = ["subnet-088dad867af90fd1e", "subnet-0df6666ad64d5baf6"]
+  availability_zones = ["eu-west-1a", "eu-west-1b"]
   launch_configuration      = aws_launch_configuration.terraform-launchconfig.name
   min_size                  = 1
   max_size                  = 2

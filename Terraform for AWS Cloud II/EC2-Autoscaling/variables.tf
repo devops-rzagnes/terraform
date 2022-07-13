@@ -19,6 +19,18 @@ variable "AMIS" {
   }
 }
 
+variable "SubnetID" {
+  default = {
+    eu-west-1a = "subnet-0df6666ad64d5baf6"
+    eu-west-1b = "subnet-088dad867af90fd1e"
+    eu-west-1c = "subnet-074ec187b4a76d531"
+    eu-west-2a= "subnet-00241b81e2914a3a0"
+    eu-west-2b = "subnet-07dd9286fd9b57d38"
+    eu-west-2c = "subnet-0ed51d256bbb2da6d"
+
+  }
+}
+
 variable "PATH_TO_PRIVATE_KEY" {
   default = "terraform_key"
 }
