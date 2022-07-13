@@ -3,7 +3,7 @@ resource "aws_launch_configuration" "terraform-launchconfig" {
   name_prefix     = "terraform-launchconfig"
   image_id        = lookup(var.AMIS, var.AWS_REGION)
   instance_type   = "t2.micro"
-  key_name        = aws_key_pair.levelup_key.key_name
+  key_name        = aws_key_pair.terraform_key.key_name
   security_groups = [aws_security_group.terraform-instance.id]
   user_data       = "#!/bin/bash\nyum -y update\nyum -y install net-tools nginx\nMYIP=`ifconfig | grep -E '(inet 10)|(addr:10)' | awk '{ print $2 }' | cut -d ':' -f2`\necho 'Hello Team\nThis is my IP: '$MYIP  and $(hostname -f) at $(date +'%Y-%m-%d %H:%M:%S')> /var/www/html/index.html"
 
@@ -13,8 +13,8 @@ resource "aws_launch_configuration" "terraform-launchconfig" {
 }
 
 #Generate Key
-resource "aws_key_pair" "levelup_key" {
-    key_name = "levelup_key"
+resource "aws_key_pair" "terraform_key" {
+    key_name = "terraform_key"
     public_key = file(var.PATH_TO_PUBLIC_KEY)
 }
 
