@@ -1,15 +1,15 @@
 variable "region" {
-  default = "us-east-2"
+  default = "eu-west-2"
 }
 
 variable "public_key_path" {
   description = "Public key path"
-  default = "~/.ssh/levelup_key.pub"
+  default = "~/.ssh/terraform_key.pub"
 }
 
 variable "instance_ami" {
   description = "AMI for aws EC2 instance"
-  default = "ami-05692172625678b4e"
+  default = "ami-030770b178fa9d374"
 }
 
 variable "instance_type" {

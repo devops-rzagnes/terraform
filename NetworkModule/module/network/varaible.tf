@@ -11,12 +11,12 @@ variable "cidr_subnet" {
 
 variable "availability_zone" {
   description = "availability zone to create subnet"
-  default = "us-east-2a"
+  default = "eu-west-1a"
 }
 
 variable "public_key_path" {
   description = "Public key path"
-  default = "~/.ssh/levelup_key.pub"
+  default = "~/.ssh/terraform_key.pub"
 }
 
 variable "environment_tag" {
