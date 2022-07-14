@@ -16,7 +16,7 @@ variable "public_key_path" {
 
 variable "instance_ami" {
   description = "AMI for aws EC2 instance"
-  default = "ami-030770b178fa9d374"
+  default = "ami-0d71ea30463e0ff8d"
 }
 
 variable "instance_type" {
