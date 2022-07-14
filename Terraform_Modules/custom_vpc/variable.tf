@@ -1,11 +1,26 @@
 variable "AWS_ACCESS_KEY" {
     type        = string
-    default     = "AKIASMSIZOF42P2VUDSZ"
+    default     = "AKIAQZ3KABO6QEPZ6U2H"
+}
+
+
+
+
+variable "PATH_TO_PRIVATE_KEY" {
+  default = "terraform_key"
+}
+
+variable "PATH_TO_PUBLIC_KEY" {
+  default = "terraform_key.pub"
+}
+
+variable "INSTANCE_USERNAME" {
+  default = "ec2-user"
 }
 
 variable "AWS_REGION" {
     type        = string
-    default     = "us-east-2"
+    default     = "eu-west-1"
 }
 
 variable "vpcname" {
