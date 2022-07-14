@@ -2,6 +2,13 @@ variable "region" {
   default = "eu-west-2"
 }
 
+variable "AWS_ACCESS_KEY" {
+  type = string
+  default = "AKIAQZ3KABO6QEPZ6U2H"
+}
+
+variable "AWS_SECRET_KEY" {}
+
 variable "public_key_path" {
   description = "Public key path"
   default = "~/.ssh/terraform_key.pub"
