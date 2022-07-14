@@ -9,9 +9,8 @@ resource "aws_vpc" "aws_vpc_terraform" {
   enable_classiclink_dns_support   = var.enable_classiclink_dns_support
   assign_generated_ipv6_cidr_block = var.enable_ipv6
 
-  tags = {
-      name = var.vpcname
-      environment = var.vpcenvironment
-  }
+  tags = merge(
+  {"Name" : var.vpcname, "Environment" : var.vpcenvironment}
+  )
   
 }
