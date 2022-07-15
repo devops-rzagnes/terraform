@@ -32,5 +32,5 @@ variable "AMIS" {
 
 variable "names" {
     description = "Test for list of names"
-    default = ['mark','trinity','john']
+    default = ["mark","trinity","john"]
 }
