@@ -18,6 +18,7 @@ module "ec2_cluster" {
     subnet_id       = "subnet-088dad867af90fd1e"
     count  = var.environment == "Production" ? 2 : 1       # If production environment, then spin up two instances, else spin up one instance
     key_name        = aws_key_pair.terraform_key.key_name
+    security_groups = [aws_security_group.allow-terraform-ssh.id]
 
 
     tags = {
