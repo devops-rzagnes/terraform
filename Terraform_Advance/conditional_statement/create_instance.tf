@@ -25,7 +25,7 @@ module "ec2_cluster" {
     subnet_id       = "subnet-088dad867af90fd1e"
 #    subnet_id = aws_subnet.terraform-vpc-test-public-2.id       ## test
     count  = var.environment == "Production" ? 2 : 1       # If production environment, then spin up two instances, else spin up one instance
-    name            = "my-cluster-${count.index}"
+    name            = "my-cluster-${count.index}-${timestamp()}"
     key_name        = aws_key_pair.terraform_key.key_name
     vpc_security_group_ids = [aws_security_group.allow-terraform-ssh.id]   # test
 
