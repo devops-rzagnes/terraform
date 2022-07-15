@@ -34,3 +34,12 @@ variable "names" {
     description = "Test for list of names"
     default = ["mark","trinity","john"]
 }
+
+variable "program-role" {
+    description = "A map of personnel and roles in he org"
+    default = {
+        mark = "software engineeer"
+        trinity = "AI progrem"
+        john = "machine operator"
+    }
+}

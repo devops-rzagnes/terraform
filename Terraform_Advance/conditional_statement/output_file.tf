@@ -7,3 +7,7 @@ output "public_ip" {
 output "upper_name" {
   value = [for i in var.names:upper(i)]
 }
+
+output "role" {
+  value = [for i,k in var.program-role: "${i} is the - ${k}"]
+}
