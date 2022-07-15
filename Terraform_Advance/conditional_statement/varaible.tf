@@ -29,3 +29,8 @@ variable "AMIS" {
         us-west-1 = "ami-0f0f1c02e5e4d9d9f"
     }
 }
+
+variable "names" {
+    description = "Test for list of names"
+    default = ['mark','trinity','john']
+}
