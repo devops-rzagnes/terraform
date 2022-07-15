@@ -2,14 +2,22 @@ provider "aws" {
   region     = var.AWS_REGION
 }
 
+#Resource key pair
+resource "aws_key_pair" "terraform_key" {
+    key_name      = "terraform_key"
+    public_key    = file(var.public_key_path)
+}
+
+
 module "ec2_cluster" {
     source = "github.com/terraform-aws-modules/terraform-aws-ec2-instance.git"
 
     name            = "my-cluster"
-    ami             = "ami-05692172625678b4e"
+    ami             = "ami-0d71ea30463e0ff8d"
     instance_type   = "t2.micro"
-    subnet_id       = "subnet-f30171bf"
-    instance_count  = var.environment == "Production" ? 2 : 1
+    subnet_id       = "subnet-088dad867af90fd1e"
+    instance_count  = var.environment == "Production" ? 2 : 1       # If production environment, then spin up two instances, else spin up one instance
+    key_name        = aws_key_pair.terraform_key.key_name
 
 
     tags = {
