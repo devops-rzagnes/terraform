@@ -16,7 +16,7 @@ module "ec2_cluster" {
     ami             = "ami-0d71ea30463e0ff8d"
     instance_type   = "t2.micro"
     subnet_id       = "subnet-088dad867af90fd1e"
-    instance_count  = var.environment == "Production" ? 2 : 1       # If production environment, then spin up two instances, else spin up one instance
+    count  = var.environment == "Production" ? 2 : 1       # If production environment, then spin up two instances, else spin up one instance
     key_name        = aws_key_pair.terraform_key.key_name
 
 
