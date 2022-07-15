@@ -12,7 +12,7 @@ variable "AWS_SECRET_KEY" {}
 
 variable "environment" {
     type        = string
-    default     = "Development"
+    default     = "Production"
 }
 
 variable "public_key_path" {
