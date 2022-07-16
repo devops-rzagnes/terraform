@@ -2,7 +2,7 @@
 module "terraform-vpc" {
   source = "github.com/terraform-aws-modules/terraform-aws-vpc.git"
 
-  name = "vpc-${var.ENVIRONMENT}"
+  name = "vpc-${var.ENVIRONMENT}-${timestamp()}"
   cidr = "10.0.0.0/16"
 
   azs             = ["${var.AWS_REGION}a", "${var.AWS_REGION}b", "${var.AWS_REGION}c"]
