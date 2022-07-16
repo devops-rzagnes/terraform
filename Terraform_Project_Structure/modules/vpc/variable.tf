@@ -13,6 +13,6 @@ variable "ENVIRONMENT" {
 variable "AWS_SECRET_KEY" {}
 
 variable "AWS_ACCESS_KEY" {
-    tyoes = string
+    type = string
     default = "AKIAQZ3KABO6QEPZ6U2H"
 }
