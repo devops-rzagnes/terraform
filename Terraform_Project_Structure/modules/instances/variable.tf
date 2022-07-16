@@ -25,6 +25,7 @@ variable "AMIS" {
       eu-west-2 = "ami-030770b178fa9d374"
       eu-west-2 = "ami-078a289ddf4b09ae0"
       eu-west-1 = "ami-0f0f1c02e5e4d9d9f"
+      us-west-1 = "ami-0cff7528ff583bf9a"
     }
 }
 
