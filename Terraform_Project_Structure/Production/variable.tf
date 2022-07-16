@@ -11,5 +11,6 @@ variable "Env" {
 variable "AWS_SECRET_KEY" {}
 
 variable "AWS_ACCESS_KEY" {
-    value = "AKIAQZ3KABO6QEPZ6U2H"
+    type = string
+    default = "AKIAQZ3KABO6QEPZ6U2H"
 }
