@@ -1,6 +1,6 @@
 {
     "variables": {
-        "aws_access_key": "",
+        "aws_access_key": "AKIAQZ3KABO6QEPZ6U2H",
         "aws_secret_key": ""
     },
     "builders": [
@@ -8,20 +8,20 @@
             "type": "amazon-ebs",
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
-            "region": "us-east-2",
+            "region": "eu-west-1",
             "source_ami_filter": {
                 "filters": {
                     "virtualization-type": "hvm",
-                    "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
+                    "name": "amazon/amzn2*-x86_64-gp2",
                     "root-device-type": "ebs"
                 },
                 "owners": [
-                    "099720109477"
+                    "amazon"
                 ],
                 "most_recent": true
             },
             "instance_type": "t2.micro",
-            "ssh_username": "ubuntu",
+            "ssh_username": "ec2-user",
             "ami_name": "scenario1-packer-{{timestamp}}"
         }
     ]
