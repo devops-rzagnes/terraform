@@ -2,10 +2,17 @@
 
 variable "AWS_REGION" {
     type    = string
-    default = "us-east-2"
+    default = "eu-west-1"
 }
 
 variable "ENVIRONMENT" {
     type    = string
     default = ""
+}
+
+variable "AWS_SECRET_KEY" {}
+
+variable "AWS_ACCESS_KEY" {
+    tyoes = string
+    default = "AKIAQZ3KABO6QEPZ6U2H"
 }

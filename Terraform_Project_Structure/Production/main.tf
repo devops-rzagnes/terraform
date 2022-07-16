@@ -5,6 +5,8 @@ module "prod-vpc" {
 
     ENVIRONMENT = var.Env
     AWS_REGION  = var.AWS_REGION
+    AWS_SECRET_KEY = var.AWS_SECRET_KEY
+    AWS_ACCESS_KEY = var.AWS_ACCESS_KEY
 }
 
 module "prod-instances" {

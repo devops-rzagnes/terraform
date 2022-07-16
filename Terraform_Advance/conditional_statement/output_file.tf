@@ -11,3 +11,4 @@ output "upper_name" {
 output "role" {
   value = [for i,k in var.program-role: "${i} is the - ${k}"]
 }
+

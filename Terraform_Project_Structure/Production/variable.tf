@@ -1,9 +1,15 @@
 variable "AWS_REGION" {
     type    = string
-    default = "eu-west-1"
+    default = "eu-west-2"
 }
 
 variable "Env" {
     type    = string
     default = "production"
+}
+
+variable "AWS_SECRET_KEY" {}
+
+variable "AWS_ACCESS_KEY" {
+    value = "AKIAQZ3KABO6QEPZ6U2H"
 }

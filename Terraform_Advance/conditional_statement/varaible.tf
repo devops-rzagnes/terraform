@@ -25,8 +25,8 @@ variable "AMIS" {
     default = {
         eu-west-1 = "ami-0d71ea30463e0ff8d"
         eu-west-2 = "ami-030770b178fa9d374"
-        us-west-2 = "ami-078a289ddf4b09ae0"
-        us-west-1 = "ami-0f0f1c02e5e4d9d9f"
+        eu-west-2 = "ami-078a289ddf4b09ae0"
+        eu-west-1 = "ami-0f0f1c02e5e4d9d9f"
     }
 }
 
@@ -42,4 +42,9 @@ variable "program-role" {
         trinity = "AI progrem"
         john = "machine operator"
     }
+}
+
+variable "user_names" {
+    description = "Test for list of IAM users"
+    default = ["mark","trinity","john"]
 }

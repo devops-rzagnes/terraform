@@ -1,6 +1,6 @@
 #Custom VPC for my Project 
-module "levelup-vpc" {
-  source = "terraform-aws-modules/vpc/aws"
+module "terraform-vpc" {
+  source = "github.com/terraform-aws-modules/terraform-aws-vpc.git"
 
   name = "vpc-${var.ENVIRONMENT}"
   cidr = "10.0.0.0/16"
@@ -12,24 +12,8 @@ module "levelup-vpc" {
   enable_nat_gateway = false
   enable_vpn_gateway = false
 
-  tags = {
-    Terraform   = "true"
-    Environment = var.ENVIRONMENT
-  }
+  tags = merge(
+  { Terraform : "true",  "Environment" : var.ENVIRONMENT}
+  )
 }
 
-#Output Specific to Custom VPC
-output "my_vpc_id" {
-  description = "VPC ID"
-  value       = module.levelup-vpc.vpc_id
-}
-
-output "private_subnets" {
-  description = "List of IDs of private subnets"
-  value       = module.levelup-vpc.private_subnets
-}
-
-output "public_subnets" {
-  description = "List of IDs of public subnets"
-  value       = module.levelup-vpc.public_subnets
-}

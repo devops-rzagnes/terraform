@@ -1,7 +1,7 @@
 # Variable for Create Instance Module
 variable "public_key_path" {
-  description = "Public key path"
-  default = "~/.ssh/levelup_key.pub"
+  description = "Public path to ssh key"
+  default = "~/.ssh/terraform_key.pub"
 }
 
 variable "VPC_ID" {
@@ -15,16 +15,16 @@ variable "ENVIRONMENT" {
 }
 
 variable "AWS_REGION" {
-default = "us-east-2"
+default = "eu-west-1"
 }
 
 variable "AMIS" {
-    type = map
+
     default = {
-        us-east-1 = "ami-0f40c8f97004632f9"
-        us-east-2 = "ami-05692172625678b4e"
-        us-west-2 = "ami-02c8896b265d8c480"
-        eu-west-1 = "ami-0cdd3aca00188622e"
+      eu-west-1 = "ami-0d71ea30463e0ff8d"
+      eu-west-2 = "ami-030770b178fa9d374"
+      eu-west-2 = "ami-078a289ddf4b09ae0"
+      eu-west-1 = "ami-0f0f1c02e5e4d9d9f"
     }
 }
 
@@ -33,5 +33,6 @@ variable "INSTANCE_TYPE" {
 }
 
 variable "PUBLIC_SUBNETS" {
-  type = list
+#  type = "list"
+  default = []
 }
