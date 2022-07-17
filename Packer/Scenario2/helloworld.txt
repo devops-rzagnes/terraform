@@ -1,1 +1,2 @@
-Hello Team, This is custom AMI via Packer.
+Hello Team
+This is custom AMI via Packer.
