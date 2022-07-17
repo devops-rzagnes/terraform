@@ -8,7 +8,7 @@
             "type": "amazon-ebs",
             "access_key": "{{user `aws_access_key`}}",
             "secret_key": "{{user `aws_secret_key`}}",
-            "region": "us-east-2",
+            "region": "eu-west-1",
             "source_ami_filter": {
                 "filters": {
                     "virtualization-type": "hvm",
@@ -29,13 +29,13 @@
         {
             "type": "file",
             "source": "./helloworld.txt",
-            "destination": "/temp/"
+            "destination": "/home/ec2-user/"
         },
         {
             "type": "shell",
             "inline": [
-                "ls -al /temp",
-                "cat /temp/helloworld.txt"
+                "ls -al /home/ec2-user/",
+                "cat /home/ec2-user/helloworld.txt"
             ]
         },
         {
