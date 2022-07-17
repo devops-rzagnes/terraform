@@ -1,3 +1,5 @@
 #!/bin/bash
-apt-get update
-apt-get install -y nginx docker.io
+sudo yum -y update
+sudo amazon-linux-extras install -y nginx1
+sudo systemctl enable nginx
+sudo systemctl start nginx
