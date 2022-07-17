@@ -12,16 +12,16 @@
             "source_ami_filter": {
                 "filters": {
                     "virtualization-type": "hvm",
-                    "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
+                    "name": "amzn2-*-x86_64-gp2",
                     "root-device-type": "ebs"
                 },
                 "owners": [
-                    "099720109477"
+                    "137112412989"
                 ],
                 "most_recent": true
             },
             "instance_type": "t2.micro",
-            "ssh_username": "ubuntu",
+            "ssh_username": "ec2-user",
             "ami_name": "scenario1-packer-{{timestamp}}"
         }
     ],
@@ -29,13 +29,13 @@
         {
             "type": "file",
             "source": "./helloworld.txt",
-            "destination": "/home/ubuntu/"
+            "destination": "/temp/"
         },
         {
             "type": "shell",
             "inline": [
-                "ls -al /home/ubuntu",
-                "cat /home/ubuntu/helloworld.txt"
+                "ls -al /temp",
+                "cat /temp/helloworld.txt"
             ]
         },
         {
