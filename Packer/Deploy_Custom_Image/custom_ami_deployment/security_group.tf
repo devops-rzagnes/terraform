@@ -5,7 +5,7 @@ resource "aws_key_pair" "terraform_key" {
 }
 
 #Secutiry Group for Instances
-resource "aws_security_group" "terrform-allow-ssh" {
+resource "aws_security_group" "terraform-allow-ssh" {
   vpc_id      = module.develop-vpc.my_vpc_id
   name        = "allow-ssh-${var.ENVIRONMENT}"
   description = "security group that allows ssh traffic"
