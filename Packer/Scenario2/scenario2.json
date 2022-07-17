@@ -22,7 +22,7 @@
             },
             "instance_type": "t2.micro",
             "ssh_username": "ec2-user",
-            "ami_name": "scenario1-packer-{{timestamp}}"
+            "ami_name": "scenario1-packer-{{isotime | clean_resource_name}}"
         }
     ],
     "provisioners": [
