@@ -31,7 +31,7 @@ variable "ENVIRONMENT" {
 
 variable "public_key_path" {
   description = "Public key path"
-  default = "~/.ssh/levelup_key.pub"
+  default = "~/.ssh/terraform_key.pub"
 }
 
 variable "vpc_private_subnet1" {
