@@ -25,7 +25,7 @@ resource "aws_db_subnet_group" "terraform-rds-subnet-group" {
 
 
 resource "aws_db_instance" "terraform-rds" {
-  identifier = "${var.ENVIRONMENT}-terraform-rds-${timestamp()}"       # Name of DB instance
+  identifier = "${var.ENVIRONMENT}-terraform-rds"       # Name of DB instance
   allocated_storage = var.TERRAFORM_RDS_ALLOCATED_STORAGE
   storage_type = "gp2"
   engine = var.TERRAFORM_RDS_ENGINE

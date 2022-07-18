@@ -42,7 +42,7 @@ resource "aws_launch_configuration" "launch_config_webserver" {
 }
 
 resource "aws_autoscaling_group" "terraform_webserver" {
-  name                      = "Terraform_WebServers-${var.ENVIRONMENT}-${timestamp()}"
+  name                      = "Terraform_WebServers-${var.ENVIRONMENT}"
   max_size                  = 2
   min_size                  = 1
   health_check_grace_period = 30
