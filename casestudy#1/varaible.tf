@@ -5,18 +5,25 @@ variable "ENVIRONMENT" {
 }
 
 variable "AMIS" {
-    type = map
+
     default = {
-        us-east-1 = "ami-0f40c8f97004632f9"
-        us-east-2 = "ami-05692172625678b4e"
-        us-west-2 = "ami-02c8896b265d8c480"
-        eu-west-1 = "ami-0cdd3aca00188622e"
+        eu-west-1 = "ami-0d71ea30463e0ff8d"
+        eu-west-2 = "ami-030770b178fa9d374"
+        eu-west-2 = "ami-078a289ddf4b09ae0"
+        eu-west-1 = "ami-0bba0a4cb75835f71"
+        us-west-2 = "ami-098e42ae54c764c35"
     }
 }
 
 variable "AWS_REGION" {
-default = "us-east-2"
+default = "eu-west-1"
 }
+
+variable "AWS_ACCESS_KEY" {
+    default = "AKIAQZ3KABO6QEPZ6U2H"
+}
+
+variable "AWS_SECRET_ACCESS_KEY" {}
 
 variable "INSTANCE_TYPE" {
   default = "t2.micro"

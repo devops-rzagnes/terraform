@@ -1,7 +1,14 @@
 variable "AWS_REGION" {
     type        = string
-    default     = "us-east-2"
+    default     = "eu-west-1"
 }
+
+variable "AWS_ACCESS_KEY" {
+  type = string
+  default = "AKIAQZ3KABO6QEPZ6U2H"
+}
+
+variable "AWS_SECRET_ACCESS_KEY" {}
 
 variable "BACKUP_RETENTION_PERIOD" {
     default = "7"
@@ -11,27 +18,27 @@ variable "PUBLICLY_ACCESSIBLE" {
     default = "true"
 }
 
-variable "LEVELUP_RDS_USERNAME" {
-    default = "testdb"
+variable "TERRAFORM_RDS_USERNAME" {
+    default = "terraformdb"
 }
 
-variable "LEVELUP_RDS_PASSWORD" {
-    default = "testdb12345"
+variable "TERRAFORM_RDS_PASSWORD" {
+    default = "terraformdb12345"
 }
 
-variable "LEVELUP_RDS_ALLOCATED_STORAGE" {
+variable "TERRAFORM_RDS_ALLOCATED_STORAGE" {
     type = string
     default = "20"
 }
 
-variable "LEVELUP_RDS_ENGINE" {
+variable "TERRAFORM_RDS_ENGINE" {
     type = string
     default = "mysql"
 }
 
-variable "LEVELUP_RDS_ENGINE_VERSION" {
+variable "TERRAFORM_RDS_ENGINE_VERSION" {
     type = string
-    default = "8.0.20"
+    default = "8.0.28"
 }
 
 variable "DB_INSTANCE_CLASS" {
