@@ -12,7 +12,7 @@
 #Define Subnet Group for RDS Service
 resource "aws_db_subnet_group" "terraform-rds-subnet-group" {
 
-    name          = "${var.ENVIRONMENT}-terraform-db-snet-${timestamp()}"
+    name          = "${var.ENVIRONMENT}-terraform-db-snet"
     description   = "Allowed subnets for DB cluster instances"
     subnet_ids    = [
       var.vpc_private_subnet1,

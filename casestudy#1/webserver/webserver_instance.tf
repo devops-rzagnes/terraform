@@ -28,10 +28,10 @@ resource "aws_key_pair" "terraform_key" {
 
 # This is required for ASGs
 resource "aws_launch_configuration" "launch_config_webserver" {
-  name   = "launch_config_webserver-${timestamp()}"
+  name   = "launch_config_webserver"
   image_id      = lookup(var.AMIS, var.AWS_REGION)
   instance_type = var.INSTANCE_TYPE
-  user_data = "#!/bin/bash\nyum -y update\nyum -y install httpd\nsystemctl start httpd\nsystemctl enable httpd\nMYIP=`ifconfig | grep -E '(inet 10)|(addr:10)' | awk '{ print $2 }' | cut -d ':' -f2`\necho 'Hello Team\nThis is my IP: '$MYIP  and my hostname is $(hostname -f) at $(date +'%Y-%m-%d %H:%M:%S')> /var/www/html/index.html"
+  user_data = "#!/bin/bash\nyum -y update\nyum -y install httpd\nsystemctl start httpd\nsystemctl enable httpd\nMYIP=`ifconfig | grep -E '(inet 10)|(addr:10)' | awk '{ print $2 }' | cut -d ':' -f2`\necho 'Hello Team\nThis is my IP\t '$MYIP  and my hostname is $(hostname -f) at $(date +'%Y-%m-%d %H:%M:%S')> /var/www/html/index.html"
   security_groups = [aws_security_group.terraform_webservers.id]
   key_name = aws_key_pair.terraform_key.key_name
   
@@ -56,7 +56,7 @@ resource "aws_autoscaling_group" "terraform_webserver" {
 
 #Application load balancer for app server
 resource "aws_lb" "terraform-load-balancer" {
-  name               = "${var.ENVIRONMENT}-terraform-lb-${timestamp()}"
+  name               = "${var.ENVIRONMENT}-terraform-lb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.terraform_webservers_alb.id]
