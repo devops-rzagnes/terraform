@@ -1,5 +1,5 @@
 module "terraform-vpc" {
-  source  = "github.com/terraform-aws-modules/terraform-aws-vpc.git"
+  source  = "terraform-aws-modules/vpc/aws"       # Needed since we specified version to use
   version = "3.14.2"
 
   name = "vpc-module-demo"
